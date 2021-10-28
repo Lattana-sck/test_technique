@@ -1,42 +1,10 @@
-const express = require("express")
-var app = express()
+const bodyParser = require("body-parser");
+const express = require("express");
+const app = express()
+require('./models/database');
+const objectsRoutes = require('./controllers/objectController')
+// const bodyParser = require('body-parser');
 
-//acceuil
-app.get("/", function (request, response) {
-    response.send("Hello World!")
-})
-
-//inscription
-app.post("/register", function(req,res){
-
-})
-
-//connexion
-app.post("/login", function(req,res){
-    
-})
-
-//ajouter
-app.post("/add", function(req,res){
-
-})
-
-//modification
-app.post("/update", function(req,res){
-
-})
-
-//suppression
-app.post("/delete", function(req,res){
-
-})
-
-//afficher listes des objets
-app.get("/list", function (req, res) {
-    res.send("list")
-})
-
-
-app.listen(10000, function () {
-    console.log("Started application on port %d", 10000)
-});
+app.use(bodyParser.json())
+app.use('/objets', objectsRoutes)
+app.listen(10000, () => console.log("Started application on port %d !", 10000));
