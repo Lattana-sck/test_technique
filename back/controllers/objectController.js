@@ -3,19 +3,16 @@ const router = express.Router();
 const ObjectID = require('mongoose').Types.ObjectId;
 
 const { ObjetsModel } = require('../models/objetsModel');
-// // Route Acceuil
-// router.get('/', (req, res) => {
-//     res.send("Hello World")
-// })
 
-// display
+// routes display objects
 router.get('/', (req, res) => {
     ObjetsModel.find((err, docs) => {
         if (!err) res.send(docs)
         else console.log("error to get data : " + err)
     })
 })
-// add
+
+// routes add objects
 router.post('/', (req, res) => {
     const newObjet = new ObjetsModel({
         name: req.body.name,
@@ -27,7 +24,8 @@ router.post('/', (req, res) => {
         else console.log("error creating data : " + err);
     })
 })
-// update
+
+// routes update objects
 router.put("/:id", (req, res) => {
     if (!ObjectID.isValid(req.params.id))
         return res.status(400).send("ID unknown : " + req.params.id)
@@ -47,7 +45,8 @@ router.put("/:id", (req, res) => {
         }
     )
 })
-// delete
+
+// routes delete objects
 router.delete("/:id", (req, res) => {
     if (!ObjectID.isValid(req.params.id))
       return res.status(400).send("ID unknown : " + req.params.id)

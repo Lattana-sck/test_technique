@@ -6,6 +6,7 @@ const ObjetsModel = mongoose.model(
         name: {
             type: String,
             required: "Insérez votre nom",
+
         },
         description: {
             type: String,

@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express()
+
 require('./models/database');
 const objectsRoutes = require('./controllers/objectController');
 const registerRoutes = require('./controllers/registerController');
@@ -8,11 +9,8 @@ const cors = require('cors');
 
 
 
-
-
-
-
 app.use(cors());
+app.use(express.json());   
 
 app.use('/objets', objectsRoutes);
 app.use('/register', registerRoutes);
