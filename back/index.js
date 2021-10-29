@@ -6,6 +6,12 @@ const registerRoutes = require('./controllers/registerController');
 const loginRoutes = require('./controllers/loginController');
 const cors = require('cors'); 
 
+
+
+
+
+
+
 app.use(cors());
 
 app.use('/objets', objectsRoutes);
