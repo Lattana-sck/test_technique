@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const bodyParser = require('body-parser')
 
 const UsersModel = require('../models/usersModel');
 
@@ -19,5 +18,4 @@ router.post('/', async (req, res) => {
         else console.log("error users : " + err);
     })
 })
-
 module.exports = router;

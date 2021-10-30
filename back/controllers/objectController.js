@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 // routes add objects
 router.post('/', (req, res) => {
-    const newObjet = new ObjetsModel({
+    const newObjet = new ObjetsModel({ 
         name: req.body.name,
         description: req.body.description
     });
