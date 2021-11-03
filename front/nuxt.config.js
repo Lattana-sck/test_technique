@@ -1,7 +1,18 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'front',
+    script: [
+      {
+        src: '/jquery-3.5.1.slim.min.js'
+      },
+      {
+        src: '/popper.min.js'
+      },
+      {
+        src: '/bootstrap.min.js'
+      }
+    ],
+    title: 'Troov-Test',
     htmlAttrs: {
       lang: 'en'
     },
@@ -12,7 +23,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/bootstrap.min.css' }
     ]
   },
 
@@ -39,5 +51,17 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, ctx) {
+      config.module.rules.push({
+        enforce: 'pre',
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules)/,
+        options: {
+          fix: true
+        }
+      })
   }
 }
+}
+module.exports = { modules: ['bootstrap-vue/nuxt'] }
