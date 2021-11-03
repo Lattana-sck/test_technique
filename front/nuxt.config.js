@@ -1,17 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    script: [
-      {
-        src: '/jquery-3.5.1.slim.min.js'
-      },
-      {
-        src: '/popper.min.js'
-      },
-      {
-        src: '/bootstrap.min.js'
-      }
-    ],
     title: 'Troov-Test',
     htmlAttrs: {
       lang: 'en'
@@ -27,7 +16,17 @@ export default {
       { rel: 'stylesheet', href: '/bootstrap.min.css' }
     ]
   },
-
+  script: [
+    {
+      src: '/jquery-3.5.1.slim.min.js'
+    },
+    {
+      src: '/popper.min.js'
+    },
+    {
+      src: '/bootstrap.min.js'
+    }
+  ],
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -61,7 +60,7 @@ export default {
           fix: true
         }
       })
+    }
   }
-}
 }
 module.exports = { modules: ['bootstrap-vue/nuxt'] }

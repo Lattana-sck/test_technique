@@ -1,26 +1,36 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <nuxt-link class="nav-link" to="/">Acceuil</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/login">Se connecter</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/register">S'enregistrer</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/objects">Les objets</nuxt-link>
-          </li>
-        </ul>
-      </div>
+  <a class="navbar-brand" href="#">Troov_Test_Technique</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Acceuil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">S'enregistrer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Se connecter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/objects">Les objets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add_objects">Ajouter un objet</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
       <div class="container">
         <nuxt />
       </div>
-    </nav>
+    
   </div>
 </template>
 
