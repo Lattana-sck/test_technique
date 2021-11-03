@@ -1,16 +1,14 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending">Fetching API...</p>
-    <p v-else-if="$fetchState.error">Une erreur s'est produite...</p>
-    <div v-else class="container">
+    <div class="container">
       <div>
         <h1 class="text-center">Les objets</h1>
       </div>
       <div>
-        <br />
         <div
           v-for="object of objects"
-          :key="object.id"
+          :key="object._id"
+          :id="object._id"
           class="card"
           style="width: 18rem"
         >
@@ -21,8 +19,10 @@
             <p class="card-text">
               {{ object.description }}
             </p>
-            <a href="#" class="btn btn-primary">Modifier</a>
-            <a href="#" class="btn btn-danger">Supprimer</a>
+            <button type="button" class="btn btn-primary">Modifier</button>
+            <button type="button" class="btn btn-danger" @click="DeleteObject(object._id)">
+              Supprimer
+            </button>
             <br />
           </div>
         </div>
@@ -35,13 +35,39 @@
 export default {
   data() {
     return {
-      objects: [],
+      objects: null,
+      id: null,
     };
   },
-  async fetch() {
-    this.objects = await fetch("http://localhost:10000/objets").then((res) =>
-      res.json()
-    );
+  created() {
+    this.list();
+  },
+
+  methods: {
+    list() {
+      this.objects = fetch("http://localhost:10000/objets")
+        .then((res) => res.json())
+        .then((data) => {
+          this.objects = data.result;
+          console.log(this.objects);
+        });
+    },
+    DeleteObject(id) {
+      fetch("http://localhost:10000/objets/" + id, {
+          method: "DELETE",
+          headers: {
+          "Content-Type": "application/json",
+          }
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          console.log(data)
+          this.list();
+      }).catch(function(err) {
+          console.log(err);
+          alert("Une erreur est survenu !")
+      });
+    },
   },
 };
 </script>
