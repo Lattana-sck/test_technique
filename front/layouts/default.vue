@@ -1,36 +1,32 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Troov_Test_Technique</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Acceuil <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register">S'enregistrer</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Se connecter</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/objects">Les objets</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/add_objects">Ajouter un objet</a>
-      </li>
-    </ul>
-    
-  </div>
-</nav>
-      <div class="container">
-        <nuxt />
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item nav-link">
+            <nuxt-link to="/">Home</nuxt-link>
+          </li>
+          <li class="nav-item nav-link">
+            <nuxt-link to="/register">S'enregistrer</nuxt-link>
+          </li>
+          <li class="nav-item nav-link">
+            <nuxt-link to="/login">Se connecter</nuxt-link>
+            <!-- <a class="nav-link" href="/login">Se connecter</a> -->
+          </li>
+          <li class="nav-item nav-link">
+            <nuxt-link to="/objects">Les objets</nuxt-link>
+            <!-- <a class="nav-link" href="/objects">Les objets</a> -->
+          </li>
+          <li class="nav-item nav-link">
+            <nuxt-link to="/add_objects">Ajouter un objet</nuxt-link>
+            <!-- <a class="nav-link" href="/add_objects">Ajouter un objet</a> -->
+          </li>
+        </ul>
       </div>
-    
+    </nav>
+    <div class="container">
+      <nuxt />
+    </div>
   </div>
 </template>
 

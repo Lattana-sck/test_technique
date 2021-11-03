@@ -17,10 +17,11 @@
               <div class="form-outline mb-4">
                 <input
                   type="email"
-                  id="form3Example3"
+                  id="mail"
                   name="mail"
                   class="form-control form-control-lg"
                   placeholder="E-mail"
+                  required
                 />
               </div>
 
@@ -29,9 +30,10 @@
                 <input
                   type="password"
                   name="password"
-                  id="form3Example4"
+                  id="password"
                   class="form-control form-control-lg"
                   placeholder="Mot de passe"
+                  required
                 />
               </div>
             </form>
@@ -42,6 +44,7 @@
             type="button"
             class="btn btn-primary btn-lg"
             style="padding-left: 2.5rem; padding-right: 2.5rem"
+            @click="ConnectUser"
           >
             Se connecter
           </button>
@@ -50,5 +53,45 @@
     </section>
   </div>
 </template>
+
+<script>
+export default {
+  name: "Login",
+  data() {
+    return {
+      isLoading: true,
+      id: null,
+      mail: null,
+      name: null,
+      password: null,
+    };
+  },
+  methods: {
+    ConnectUser() {
+      (this.mail = document.getElementById("mail").value),
+        (this.password = document.getElementById("password").value);
+      fetch("http://localhost:10000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          mail: this.mail,
+          password: this.password,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          localStorage.setItem('token', data.token)
+          this.$router.push("/");
+        })
+        .catch(function () {
+          alert("Mauvais identifiant ou mot de passe !");
+        });
+    },
+  },
+};
+</script>
 
 <style></style>

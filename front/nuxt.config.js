@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Troov-Test',
+    title:'Troov-Test',
     htmlAttrs: {
       lang: 'en'
     },
