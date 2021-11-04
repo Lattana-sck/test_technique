@@ -67,7 +67,7 @@
 
 <script>
 export default {
-  name: "Login",
+  name: "Register",
   data() {
     return {
       isLoading: true,

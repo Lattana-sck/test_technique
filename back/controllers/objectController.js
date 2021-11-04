@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
 
     newObjet.save();
 
-    return res.status(200).send("Object created !")
+    return res.status(200).json({message: "Object created !"})
 })
 
 // routes update objects

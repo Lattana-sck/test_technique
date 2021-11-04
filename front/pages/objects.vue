@@ -49,7 +49,6 @@ export default {
         .then((res) => res.json())
         .then((data) => {
           this.objects = data.result;
-          console.log(this.objects);
         });
     },
     DeleteObject(id) {
@@ -61,7 +60,6 @@ export default {
       })
       .then((response) => response.json())
       .then((data) => {
-          console.log(data)
           this.list();
       }).catch(function(err) {
           console.log(err);
