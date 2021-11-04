@@ -4,13 +4,13 @@
       <div>
         <h1 class="text-center">Les objets</h1>
       </div>
-      <div>
+      <div class="d-flex align-content-stretch flex-wrap justify-content-between">
         <div
           v-for="object of objects"
           :key="object._id"
           :id="object._id"
-          class="card"
-          style="width: 18rem"
+          class="card shadow-lg p-3 mb-5 bg-white rounded"
+          style="width: 16rem"
         >
           <div class="card-body">
             <h5 class="card-title">
@@ -19,9 +19,9 @@
             <p class="card-text">
               {{ object.description }}
             </p>
-            <button type="button" class="btn btn-primary">Modifier</button>
+            <button type="button" class="btn btn-primary">+</button>
             <button type="button" class="btn btn-danger" @click="DeleteObject(object._id)">
-              Supprimer
+              X
             </button>
             <br />
           </div>

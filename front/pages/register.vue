@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <section class="vh-100">
       <h1 class="text-center">S'enregistrer</h1>
       <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -61,7 +60,6 @@
           </button>
         </div>
       </div>
-    </section>
   </div>
 </template>
 

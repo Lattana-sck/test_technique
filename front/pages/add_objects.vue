@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <section class="vh-100">
       <h1 class="text-center">Ajouter un objet</h1>
       <div class="container-fluid h-custom"> 
           <div class="d-flex justify-content-center">
@@ -41,7 +40,6 @@
             Ajouter
           </button>
         </div>
-    </section>
   </div>
 </template>
 
